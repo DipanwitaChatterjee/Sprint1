@@ -13,11 +13,11 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.surveyBuilder.Service.SurveyorService;
-import com.surveyBuilder.entities.Feedback;
-import com.surveyBuilder.entities.Questions;
-import com.surveyBuilder.entities.Responses;
-import com.surveyBuilder.entities.Survey;
+import com.surveybuilder.service.SurveyorService;
+import com.surveybuilder.entities.Feedback;
+import com.surveybuilder.entities.Questions;
+import com.surveybuilder.entities.Responses;
+import com.surveybuilder.entities.Survey;
 
 @RestController
 @RequestMapping
