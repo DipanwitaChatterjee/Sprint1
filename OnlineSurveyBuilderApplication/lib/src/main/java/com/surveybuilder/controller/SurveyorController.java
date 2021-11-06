@@ -1,4 +1,4 @@
-package com.surveyBuilder.Controller;
+package com.surveybuilder.Controller;
 
 import java.util.List;
 
