@@ -7,41 +7,51 @@ import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Size;
 
 @Entity
 public class Respondent {
 	@Id
-	@Column(name="respondent_id")
+	@GeneratedValue(strategy=GenerationType.AUTO)
+	@Column(name="respondent_Id")
+	
 	private int respondentId;
-	@Column(name="respondent_name",length=20)
-	@NotBlank(message="Respondent name is mandatory")
+	@Column(name="respondent_name")
+	@NotBlank(message="mandatory")
 	private String respondentName;
+	
 	@Column(name="respondent_username",length=20)
-	@NotBlank(message="Respondent Username is mandatory")
+	@NotBlank(message="mandatory")
 	private String respondentUsername;
-	@Column(name="respondent_password",length=15)
-	@NotBlank(message="Password is mandatory")
+	
+	@Column(name="respondent_password")
+	@NotBlank(message="mandatory")
 	private String respondentPassword;
-	@Column(name="userType",length=15)
-	@NotBlank(message="Usertype is mandatory")
+	@Column(name="userType")
 	private String userType;
 	
 	@OneToMany(mappedBy="respondentId",cascade=CascadeType.ALL,fetch=FetchType.LAZY)
-	private List<Responses>responses=new ArrayList<Responses>();
+	private List<Responses> resp =new ArrayList<Responses>();
 	
 	@OneToOne(mappedBy="respondentId",cascade=CascadeType.ALL,fetch=FetchType.LAZY)
 	private Feedback feedback1;
 	
 	
+	
+	public Respondent() {
+		super();
+	}
 	public List<Responses> getResponses() {
-		return responses;
+		return resp;
 	}
 	public void setResponses(List<Responses> responses) {
-		this.responses = responses;
+		this.resp = responses;
 	}
 	public int getRespondentId() {
 		return respondentId;
@@ -66,6 +76,30 @@ public class Respondent {
 	}
 	public void setRespondentPassword(String respondentPassword) {
 		this.respondentPassword = respondentPassword;
+	}
+	
+	public Respondent(int respondentId, String respondentName, String respondentUsername, String respondentPassword,
+			String userType, List<Responses> responses, Feedback feedback1) {
+		super();
+		this.respondentId = respondentId;
+		this.respondentName = respondentName;
+		this.respondentUsername = respondentUsername;
+		this.respondentPassword = respondentPassword;
+		this.userType = userType;
+		this.resp = responses;
+		this.feedback1 = feedback1;
+	}
+	@Override
+	public String toString() {
+		return "Respondent [respondentId=" + respondentId + ", respondentName=" + respondentName
+				+ ", respondentUsername=" + respondentUsername + ", respondentPassword=" + respondentPassword
+				+ ", userType=" + userType + ", responses=" + resp + ", feedback1=" + feedback1 + "]";
+	}
+	public String getUserType() {
+		return userType;
+	}
+	public void setUserType(String userType) {
+		this.userType = userType;
 	}
 	
 	
