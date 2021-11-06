@@ -1,4 +1,4 @@
-package com.surveyBuilder.Service;
+package com.surveybuilder.service;
 
 import java.util.List;
 
@@ -6,10 +6,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Service;
 
-import com.surveybuilder.Dao.FeedbackDao;
-import com.surveybuilder.Dao.QuestionsDao;
-import com.surveybuilder.Dao.ResponsesDao;
-import com.surveybuilder.Dao.SurveyDao;
+import com.surveybuilder.dao.FeedbackDao;
+import com.surveybuilder.dao.QuestionsDao;
+import com.surveybuilder.dao.ResponsesDao;
+import com.surveybuilder.dao.SurveyDao;
 import com.surveybuilder.entities.Feedback;
 import com.surveybuilder.entities.Questions;
 import com.surveybuilder.entities.Responses;
