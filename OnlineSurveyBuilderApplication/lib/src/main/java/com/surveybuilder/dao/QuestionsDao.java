@@ -6,7 +6,7 @@ import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
-import com.surveyBuilder.entities.Questions;
+import com.surveybuilder.entities.Questions;
 
 public interface QuestionsDao extends JpaRepository<Questions, Integer>{
   
