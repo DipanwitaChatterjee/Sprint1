@@ -26,11 +26,11 @@ public class AdminServiceImpl implements AdminService{
 	private SurveyorDao surveyordao=null;
 	
 	@Override
-	public void createAdmin(Admin admin) {
+	public Admin createAdmin(Admin admin) {
 		admindao.save(admin);
 	}
 	@Override
-	public void createSurveyor(Surveyor surveyor) {
+	public Surveyor createSurveyor(Surveyor surveyor) {
 		surveyordao.save(surveyor);
 		
 	}
