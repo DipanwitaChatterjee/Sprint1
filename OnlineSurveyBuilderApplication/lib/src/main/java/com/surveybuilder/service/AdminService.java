@@ -8,8 +8,8 @@ import com.surveybuilder.entities.Responses;
 import com.surveybuilder.entities.Surveyor;
 
 public interface AdminService {
-	public void createAdmin(Admin admin);
-	public void createSurveyor(Surveyor surveyor);
+	public Admin createAdmin(Admin admin);
+	public Surveyor createSurveyor(Surveyor surveyor);
 	
 	
 	
