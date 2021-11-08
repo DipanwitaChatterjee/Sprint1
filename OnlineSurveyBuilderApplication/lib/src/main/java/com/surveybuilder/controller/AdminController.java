@@ -27,11 +27,11 @@ public class AdminController {
 	private AdminService service = null;
 
 	@PostMapping(path = "{admin")
-	public void createAdminController(@RequestBody Admin admin) {
+	public Admin createAdminController(@RequestBody Admin admin) {
 		service.createAdmin(admin);
 	}
 	@PostMapping(path="surveyor")
-	public void createSurveyor(@RequestBody Surveyor surveyor) {
+	public Surveyor createSurveyor(@RequestBody Surveyor surveyor) {
 		service.createSurveyor(surveyor);
 	}
 	
